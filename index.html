@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قلب شهد</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #d49aa8, #9b6b7a);
+    font-family: Tahoma, Arial;
+  }
+
+  .heart {
+    position: relative;
+    width: 300px;        /* قلب أكبر */
+    height: 300px;
+    background: linear-gradient(145deg, #ff4d6d, #ff8fa3);
+    transform: rotate(-45deg);
+    animation: beat 1.4s ease-in-out infinite;
+    box-shadow: 0 30px 70px rgba(255, 77, 109, 0.65);
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: inherit;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .heart::before {
+    top: -150px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 150px;
+    top: 0;
+  }
+
+  /* النص فوق القلب */
+  .text {
+    position: absolute;
+    z-index: 5;  /* الحل هنا */
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 90px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    letter-spacing: 3px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
+
+  /* حركة نبض أنعم */
+  @keyframes beat {
+    0% {
+      transform: rotate(-45deg) scale(1);
+    }
+    25% {
+      transform: rotate(-45deg) scale(1.05);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.12);
+    }
+    75% {
+      transform: rotate(-45deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="heart">
+    <div class="text">شهد</div>
+  </div>
+
+</body>
+</html>
