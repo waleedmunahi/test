@@ -16,10 +16,11 @@
     font-family: Tahoma, Arial;
   }
 
+  /* القلب */
   .heart {
     position: relative;
-    width: 300px;        /* قلب أكبر */
-    height: 300px;
+    width: 240px;          /* 300 → 240 (تصغير 20%) */
+    height: 240px;
     background: linear-gradient(145deg, #ff4d6d, #ff8fa3);
     transform: rotate(-45deg);
     animation: beat 1.4s ease-in-out infinite;
@@ -30,40 +31,42 @@
   .heart::after {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 240px;          /* نفس الحجم */
+    height: 240px;
     background: inherit;
     border-radius: 50%;
     z-index: 1;
   }
 
   .heart::before {
-    top: -150px;
+    top: -120px;           /* نصف الارتفاع */
     left: 0;
   }
 
   .heart::after {
-    left: 150px;
+    left: 120px;           /* نصف العرض */
     top: 0;
   }
 
-  /* النص فوق القلب */
+  /* النص داخل القلب */
   .text {
     position: absolute;
-    z-index: 5;  /* الحل هنا */
+    z-index: 5;
     width: 100%;
     text-align: center;
-    color: #fff;
-    font-size: 90px;
+    color: #ffffff;
+    font-size: 45px;       /* 56 → 45 (تصغير 20%) */
     font-weight: bold;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     letter-spacing: 3px;
     text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    text-decoration: none;
+    cursor: default;
   }
 
-  /* حركة نبض أنعم */
+  /* حركة النبض */
   @keyframes beat {
     0% {
       transform: rotate(-45deg) scale(1);
